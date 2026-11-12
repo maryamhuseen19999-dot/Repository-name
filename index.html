@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مستشفى الجامعة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="top-line"></div>
+
+    <header class="header" id="home">
+        <a class="logo" href="#home">
+            <span class="logo-icon">✚</span>
+            <span>مستشفى <b>الجامعة</b></span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="#home">الرئيسية</a>
+            <a href="#departments">الأقسام الطبية</a>
+            <a href="#about">عن المستشفى</a>
+        </nav>
+
+        <a href="#departments" class="header-button">اكتشف الأقسام <span>←</span></a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content reveal">
+                <div class="hero-label">
+                    <span class="pulse-dot"></span>
+                    صحتك تهمنا
+                </div>
+
+                <h1>
+                    رعاية صحية أفضل<br>
+                    <span>لمستقبل أكثر صحة</span>
+                </h1>
+
+                <p>
+                    اكتشف الأقسام الطبية وتعرّف على الأمراض وأعراضها
+                    وطرق الوقاية والرعاية الصحية من خلال تجربة سهلة ومميزة.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#departments" class="primary-button">استكشف الأقسام <span>←</span></a>
+                    <a href="#about" class="secondary-button">تعرف علينا</a>
+                </div>
+
+                <div class="hero-note">
+                    <span>✓</span> معلومات صحية تعليمية بطريقة بسيطة ومنظمة
+                </div>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="hero-circle"></div>
+           <div class="medical-cross">✚</div>
+                <div class="floating-card card-one">
+                    <span>❤️</span>
+                    <div><b>صحة القلب</b><small>اهتمام ورعاية</small></div>
+                </div>
+                <div class="floating-card card-two">
+                    <span>🩺</span>
+                    <div><b>رعاية متكاملة</b><small>21 قسمًا طبيًا</small></div>
+                </div>
+                <div class="hero-big-icon">🏥</div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-icon">🏥</span>
+                <div><strong id="totalDepartments">21</strong><small>قسمًا طبيًا</small></div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🧬</span>
+                <div><strong id="totalDiseases">42</strong><small>نوعًا من الأمراض</small></div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-icon">🔎</span>
+                <div><strong>بحث سهل</strong><small>للوصول للمعلومات</small></div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="section-title">
+                <span class="eyebrow">من نحن</span>
+                <h2>مرحبًا بك في <span>مستشفى الجامعة</span></h2>
+                <p>
+                    مشروع تعليمي يعرّفك بالتخصصات الطبية المختلفة،
+                    ويقدم معلومات مبسطة تساعدك على فهم الأمراض والرعاية الصحية.
+                </p>
+            </div>
+        </section>
+
+        <section class="departments-section" id="departments">
+            <div class="section-title">
+                <span class="eyebrow">اكتشف خدماتنا</span>
+                <h2>الأقسام <span>الطبية</span></h2>
+                <p>اختار القسم المناسب، ثم اختار المرض لمعرفة المزيد من التفاصيل.</p>
+            </div>
+
+            <div class="search-area">
+                <span class="search-icon">⌕</span>
+  <input id="search" type="search" placeholder="ابحث باسم القسم أو المرض...">
+                <span class="search-hint">بحث</span>
+            </div>
+
+            <div class="filter-row">
+                <span id="departmentCount">21 قسمًا طبيًا</span>
+                <span class="filter-caption">اختر القسم لعرض الأنواع المتاحة</span>
+            </div>
+
+            <div class="department-grid" id="departmentCards"></div>
+
+            <div class="empty-message" id="emptyMessage" hidden>
+                <span>🔎</span>
+                <h3>لم نعثر على نتائج</h3>
+                <p>جرب البحث بكلمة مختلفة.</p>
+            </div>
+        </section>
+
+        <section class="disease-section" id="diseaseArea" hidden>
+            <div class="disease-header">
+                <button id="backToDepartments" class="back-button">→ العودة إلى الأقسام</button>
+                <span class="eyebrow">اختيار المرض</span>
+                <h2 id="selectedDepartmentTitle"></h2>
+                <p>اختار نوع المرض الذي تريد معرفة معلومات عنه.</p>
+            </div>
+            <div class="disease-types" id="diseaseTypes"></div>
+        </section>
+
+        <section class="details-section" id="detailsArea" hidden>
+            <div class="details-container">
+                <button id="backToDiseases" class="back-button">→ العودة إلى أنواع الأمراض</button>
+                <div id="diseaseDetails"></div>
+            </div>
+        </section>
+
+        <section class="notice-section">
+            <div class="notice-icon">ℹ️</div>
+            <div>
+                <h3>تنويه مهم</h3>
+                <p>
+                    هذا الموقع مشروع تعليمي للتوعية الصحية فقط، ولا يقدم تشخيصًا
+                    طبيًا أو وصفات علاجية. يجب الرجوع إلى الطبيب المختص.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">✚ مستشفى الجامعة</div>
+        <p>رعاية متكاملة ومعلومات صحية مبسطة</p>
+        <small>تحت انشاء مريم حسين © 2026</small>
+    </footer>
+
+   <button id="topButton" class="top-button" aria-label="العودة للأعلى">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
